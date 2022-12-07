@@ -1,0 +1,244 @@
+@media (max-width: 1120px) {}
+
+@media (max-width: 992px) {
+
+  .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
+    color: #000000;
+  }
+
+  .quote_btn-container {
+    display: none;
+  }
+
+
+  .ring_section .ring_container .detail-box {
+    margin-bottom: 45px;
+  }
+
+  .price_section .price_container .box {
+    height: 450px;
+  }
+  .price_section {
+    background-color: #ffffff;
+  }
+ 
+}
+
+
+@media (max-width: 768px) {
+  .hero_area {
+    background-position: top left;
+    height: auto;
+  }
+
+  .slider_section {
+    padding: 45px 0;
+  }
+
+  .contact_section button {
+    margin-bottom: 45px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact_section form {
+    padding: 0;
+  }
+
+  .client_section .client_container {
+    flex-direction: column;
+  }
+
+  .client_section .client_container .client-id {
+    width: auto;
+  }
+
+  .client_section .client_container .detail-box {
+    margin-top: 35px;
+    width: auto;
+  }
+
+  .contact_section .map_container {
+    height: 350px;
+    padding: 0;
+  }
+
+  .info_section .col-md-3 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .info_section .info_container .info_contact {
+    padding: 35px 0;
+  }
+
+  .info_section .info_form form input {
+    width: 100%;
+  }
+
+  .ring_section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .slider_section .detail_box {
+    text-align: center;
+  }
+
+  .slider_section .detail_box h1 {
+    font-size: 4rem;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .client_section .carousel-control-prev,
+  .client_section .carousel-control-next {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .slider_section .detail_box h1 {
+    font-size: 3rem;
+  }
+
+  .slider_section .detail_box h2 {
+    font-size: 1.8rem;
+  }
+
+  .heading_container h2::before {
+    display: none;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+@media screen and (max-width:700px) {
+  .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
+    color: #000000;
+    /*  */
+  }
+  .Container{
+    display: flex;
+    flex-direction: column;
+  }
+ 
+  .contactForm{
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .contactFrame{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+  }
+  .subtitle {
+    width: 375px;
+    color: rgba(156, 155, 155, 1);
+    font-family: Poppins;
+    font-weight: normal;
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .title {
+    width: 144px;
+    color: rgba(54, 54, 54, 1);
+    font-family: Poppins;
+    font-weight: 600; 
+    font-size: 25px;
+     text-align: left;
+   } 
+
+  .email { 
+    color: rgba(253, 121, 0, 1);
+    font-family: Poppins;
+    font-weight: Medium;
+    font-size: 20px; 
+    text-align: left;
+  
+   } 
+ 
+  .contact-txt{
+    width: 89%;
+    font-weight: 600;
+  }
+  
+  .form-group{
+    width: 100%;
+  }
+}
+
+ 
+
+@media (max-width: 360px) {
+ input{
+  width: 100%;
+ }
+  .Container{
+    display: flex;
+    flex-direction: column;
+  }
+  .contactForm{
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .get-in-t{
+    font-size: 22px;
+  }
+  .contactFrame{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+  }
+  .contact-txt{
+   
+    width: 80%;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  
+  .subtitle {
+    width: 340px;
+    color: rgba(156, 155, 155, 1);
+    font-family: Poppins;
+    font-weight: normal;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .title {
+    /* width: 144px; */
+    color: rgba(54, 54, 54, 1);
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .email { 
+    color: rgba(253, 121, 0, 1);
+    font-family: Poppins;
+    font-weight: Medium;
+    font-size: 14px;
+    text-align: left;
+  
+  }
+
+  .form-group{
+    width: 100%;
+  }
+}
