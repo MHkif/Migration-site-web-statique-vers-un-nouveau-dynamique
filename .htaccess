@@ -1,0 +1,7 @@
+Options All -indexes
+
+RewriteEngine On
+
+RewriteBase /Migration-site-web-statique-vers-un-nouveau-dynamique/
+
+RewriteRule ^([-a-zA-Z0-9]+)$ index.php?url=$1
