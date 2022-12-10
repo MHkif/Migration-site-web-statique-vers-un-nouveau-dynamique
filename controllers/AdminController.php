@@ -1,5 +1,6 @@
 <?php
-// require_once '../models/Admin.php';
+// require_once 'models/Admin.php';
+// session_start();
 class AdminController
 {
 
@@ -11,10 +12,7 @@ class AdminController
             $password = $_POST['password'];
             $admin = Admin::login($email, $password);
 
-            if ($admin) {
-                $_SESSION['logged'] = $admin['Email'];
-                header('Location: gallery.php');
-            }
+            return $admin;
         }
     }
 
@@ -23,10 +21,37 @@ class AdminController
         if (isset($_POST['logout'])) {
             session_unset();
             session_destroy();
-            header('Location:' . BASE_URL . 'login');
         }
     }
 }
 
-$admin = new AdminController();
-$admin->logging();
+
+
+
+function signin()
+{
+    if (isset($_POST['login'])) {
+
+        $admin = new AdminController();
+        $data = $admin->logging();
+
+        if ($data) {
+            $_SESSION['logged'] = true;
+            $_SESSION['email'] = $data['Email'];
+            // header('Location:' . BASE_URL . 'home');
+        }
+    }
+}
+
+function signout()
+{
+    if (isset($_POST['logout'])) {
+        $admin = new AdminController();
+        $admin->logout();
+        $_SESSION['logged'] = false;
+        // header('Location:' . BASE_URL . 'login');
+    }
+}
+
+signin();
+signout();

@@ -1,7 +1,13 @@
-<?php require_once './bootstrap.php';
+<?php
 
-// call_user_func()
-
+ob_start();
+// code PHP
+require_once 'bootstrap.php';
+session_start();
+if (isset($_SESSION['logged'])) {
+    $logged = $_SESSION['logged'] ? true : false;
+}
+ob_end_flush();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +29,7 @@
         <div class="container">
             <a class="navbar-brand" href="<?php echo BASE_URL; ?>">
                 <img src="./src/images/cullianPNG.png" alt=" Cullinan" style="width: 120px;">
+                <small><?php echo $_SESSION['logged']?? '' ?></small>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,22 +50,19 @@
                     </li>
 
                 </ul>
-                <form action="" class="d-flex">
+                <form action="" method="POST" class="d-flex">
                     <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-                    <button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#myModal">Log in</button>
+                    <button class="btn <?php echo  $logged ? 'd-none' : 'd-flex'; ?> btn-dark" name="login" type="button" data-bs-toggle="modal" data-bs-target="#myModal">Log in</button>
+                    <button class="btn <?php echo  $logged ? 'd-flex' : 'd-none'; ?> btn-dark" name="logout" type="submit">Logout</button>
                     <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
                 </form>
             </div>
         </div>
     </nav>
-    <div class="modal" id="myModal">
+    <div class="modal fade" id="myModal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content py-5">
-
-
-
                 <!-- Modal body -->
-
                 <div class="container-fluid m-auto col-lg-8" style="font-family: 'labster', cursive;">
                     <div class="d-flex justify-content-center mb-5"><img src="./src/images/cullianPNG.png" alt=" Cullinan" style="width: 120px;"></div>
                     <form method="POST">
@@ -76,10 +80,6 @@
                         </div>
                     </form>
                 </div>
-
-
-
-
             </div>
         </div>
     </div>

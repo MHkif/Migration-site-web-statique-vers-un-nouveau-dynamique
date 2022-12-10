@@ -1,5 +1,5 @@
 <?php
-
+require_once 'controllers/AdminController.php';
 ?>
 
 <!-- Hero section -->

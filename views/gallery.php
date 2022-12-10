@@ -5,8 +5,9 @@
                 <img src="./src/images/E_ANGLE.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="400" height="400" loading="lazy">
             </div>
             <div class="col-sm-6 px-5">
-                <h1 class="display-4 fst-italic text-center">Title of a longer featured blog post</h1>
-                <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+                <h1 class="display-5 fst-italic text-center">UNEEK DIAMOND BAND WITH CUSHION-SHAPED</h1>
+                <p class="lead my-3">Whether you are looking for an elegant new piece of jewelry for everyday wear or a once-in-a-lifetime occasion</p>
+
 
 
             </div>
@@ -24,7 +25,7 @@
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 justify-content-start justify-content-start p-3 px-2">
         <div class="col">
-            <div class="card shadow border-0">
+            <div class="card shadow-sm border-0 bg-transparent">
                 <img src="./src/images/chroma.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>

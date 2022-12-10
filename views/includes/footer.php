@@ -30,7 +30,7 @@
             <div class="row ">
                 <div class="col-lg-4 mb-3">
                     <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="/" aria-label="Cullinan">
-                        <img src="./src/images/cullianPNG.png" width="100" height="32" class="d-block me-2" viewBox="0 0 118 94" role="img">
+                        <img src="./src/images/cullianPNG.png" width="100" height="40" class="d-block me-2" viewBox="0 0 118 94" role="img">
 
                     </a>
                     <ul class="list-unstyled small text-muted">
