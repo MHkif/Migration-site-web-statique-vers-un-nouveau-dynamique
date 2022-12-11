@@ -8,7 +8,7 @@ require_once './controllers/homeController.php';
 $home = new HomeController();
 
 
-$pages = ['home', 'add', 'update', 'delete', 'login', 'gallery', 'about', 'contact'];
+$pages = ['home', 'add', 'update', 'delete', 'login', 'gallery', 'about', 'contact', 'dashboard'];
 
 if (isset($_GET['url'])) {
     if (in_array($_GET['url'], $pages)) {
@@ -33,3 +33,4 @@ require_once './views/includes/footer.php';
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lobster&family=Zen+Dots&display=swap" rel="stylesheet">
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">

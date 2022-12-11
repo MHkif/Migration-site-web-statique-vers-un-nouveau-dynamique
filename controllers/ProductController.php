@@ -4,7 +4,7 @@ class ProductsController
 {
     public function getAllProducts()
     {
-        $products = Product::getAll();
+        $products = Product::getAllProducts();
         return $products;
     }
 
@@ -42,17 +42,18 @@ class ProductsController
 
     public function newProduct()
     {
-        if (isset($_POST['submit'])) {
+        if (isset($_POST['submitCreation'])) {
             $data = array(
-                'title' => $_POST['title'],
+                'titre' => $_POST['titre'],
                 'description' => $_POST['description'],
-                'collection' => $_POST['collection'],
-                'author' => $_SESSION['user_id'],
-                'created' => date('d/m/y h:i:s'),
+                'prix' => $_POST['prix'],
+                'qnt' => $_POST['qnt'],
+                'image' => $_FILES['image']['name'],
+
             );
             $result = Product::add($data);
             if ($result === 'ok') {
-                header('location:' . BASE_URL);
+                // header('location:' . BASE_URL);
             } else {
                 echo $result;
             }
@@ -63,13 +64,13 @@ class ProductsController
     public function updateProduct()
     {
 
-        if (isset($_POST['submit'])) {
+        if (isset($_POST['submitUpdate'])) {
             $data = array(
                 'id' => $_POST['id'],
-                'title' => $_POST['title'],
+                'titre' => $_POST['titre'],
                 'description' => $_POST['description'],
-                'collection' => $_POST['collection'],
-                'created' => date('d/m/y h:i:s'),
+                'prix' => $_POST['prix'],
+                'qnt' => $_POST['qnt'],
             );
 
             // 'author' => $_SESSION['user_id'],
@@ -82,3 +83,25 @@ class ProductsController
         }
     }
 }
+
+
+function addProd()
+{
+    if (isset($_POST['submitCreation'])) {
+        $prod = new ProductsController();
+        $prod->newProduct();
+        print_r($_POST['submitCreation']);
+    }
+}
+
+
+function UpdateProd()
+{
+    if (isset($_POST['submitUpdate'])) {
+        $prod = new ProductsController();
+        $prod->updateProduct();
+    }
+}
+
+addProd();
+UpdateProd();

@@ -3,7 +3,7 @@ require 'database/init.php';
 // this model will be related to database 
 class Product
 {
-    static public function getAll()
+    static public function getAllProducts()
     {
         $query = InitDatabase::init()->prepare('SELECT * FROM produits');
         $query->execute();
@@ -35,15 +35,17 @@ class Product
     }
     static public function add($data)
     {
-        $addedQuery = InitDatabase::init()->prepare('INSERT INTO produits(title, description, collection, author, created)
-         VALUES (:title, :description, :collection, :author, :created)');
+        $addedQuery = InitDatabase::init()->prepare('INSERT INTO produits(titre, description, prix, qnt, image)
+         VALUES (:title, :description, :price, :quantity, :image)');
 
         //   $addedQuery->prepare($sql);
-        $addedQuery->bindParam(':title', $data['title']);
+        $addedQuery->bindParam(':title', $data['titre']);
         $addedQuery->bindParam(':description', $data['description']);
-        $addedQuery->bindParam(':collection', $data['collection']);
-        $addedQuery->bindParam(':author', $data['author']);
-        $addedQuery->bindParam(':created',  $data['created']);
+        $addedQuery->bindParam(':price', $data['prix']);
+        $addedQuery->bindParam(':quantity', $data['qnt']);
+        $addedQuery->bindParam(':image', $data['image']);
+        $image = $data['image'];
+        move_uploaded_file($_FILES['image']['tmp_name'], "../images/$image");
 
         if ($addedQuery->execute()) {
             return 'ok';
@@ -57,14 +59,15 @@ class Product
     {
         try {
 
-            $updateQuery = InitDatabase::init()->prepare("UPDATE produits SET title= :title, description= :description, collection= :collection, created= :created WHERE id= :id");
+            $updateQuery = InitDatabase::init()->prepare("UPDATE produits SET titre= :title, description= :description, prix= :price, qnt= :quantity WHERE ID= :id");
 
-            $updateQuery->bindParam(':id', $data['id'], PDO::PARAM_INT);
-            $updateQuery->bindParam(':title', $data['title']);
+            $updateQuery->bindParam(':id', $data['ID'], PDO::PARAM_INT);
+            $updateQuery->bindParam(':title', $data['titre']);
             $updateQuery->bindParam(':description', $data['description']);
-            $updateQuery->bindParam(':collection', $data['collection']);
-            $updateQuery->bindParam(':created',  $data['created']);
+            $updateQuery->bindParam(':price', $data['prix']);
+            $updateQuery->bindParam(':quantity',  $data['qnt']);
             $updateQuery->execute();
+
             return 'ok';
         } catch (PDOException $err) {
             echo 'Erreur ' . $err->getMessage();
@@ -76,7 +79,7 @@ class Product
     {
         $id = $data['id'];
         try {
-            $query = 'DELETE FROM produits WHERE id = :id';
+            $query = 'DELETE FROM produits WHERE ID = :id';
             $todoQuery = InitDatabase::init()->prepare($query);
             $todoQuery->execute(array(':id' => $id));
             $todo = $todoQuery->fetch(PDO::FETCH_OBJ);

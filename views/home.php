@@ -88,3 +88,40 @@ require_once 'controllers/AdminController.php';
     </div>
 
 </div>
+
+<!-- ABOUT SECTION  -->
+<div class="container-fluid py-3 text-center ">
+    <h1 class="fs-1 p-3" style="font-family: 'Courgette', cursive; ">About Us</h1>
+    <div class="row flex-lg justify-content-center align-items-center p-3 p-sm-5">
+        <div class="col-sm-6 col-md-3 px-5 text-md-start d-flex flex-column gap-3">
+            <h1 class="fs-2 d-none d-md-flex text-dark">GURANTEE</h1>
+            <p class="lead d-none d-md-flex px-1 fs-5 text-secondary" style="font-family: 'Poppins';">Always guarantee that the products we provide are High Quality </p>
+
+        </div>
+        <div class="col col-sm-6 ">
+            <img src="./src/images/quality.jpg" class="d-block mx-lg-auto img-fluid rounded-3" alt="Bootstrap Themes" width="400" height="400" loading="lazy">
+        </div>
+        <div class="col-sm-6  col-md-3 px-5 text-md-start d-flex flex-column gap-3">
+            <h1 class="fs-2 d-none d-md-flex  text-dark">CASHBACK UP TO 80%</h1>
+            <p class="lead d-none d-md-flex px-1 fs-5 text-secondary" style="font-family: 'Poppins';">only by using our services, you can get money back up to 80% </p>
+        </div>
+    </div>
+
+    <div class="row flex-lg justify-content-center align-items-center p-3 p-sm-5">
+
+        <div class="col col-sm-6 col-md-4 ">
+            <img src="./src/images/delivery.jpg" class="d-block mx-lg-auto img-fluid rounded-3" alt="Bootstrap Themes" width="400" height="400" loading="lazy">
+        </div>
+        <div class="col-sm-6 col-md-4 px-5 text-md-start d-flex flex-column gap-3">
+            <h1 class="fs-2 d-none d-md-flex  text-dark">FREE DELIVERY</h1>
+            <p class="lead d-none d-md-flex px-1 fs-5 text-secondary" style="font-family: 'Poppins';">Free shipping to all regions, with guaranteed service on time </p>
+        </div>
+        <div class="col col-sm-6 col-md-4 ">
+            <img src="./src/images/cash.jpg" class="d-block mx-lg-auto img-fluid rounded-3" alt="Bootstrap Themes" width="400" height="400" loading="lazy">
+        </div>
+
+    </div>
+
+
+
+</div>
