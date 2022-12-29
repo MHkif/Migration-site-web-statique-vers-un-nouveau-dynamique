@@ -17,7 +17,7 @@ require APPROOT . '/views/inc/header.php';
 
       <div class="d-grid gap-2 d-md-flex justify-content-center" style="font-family: 'labster', cursive;">
         <a href="<?php echo URLROOT; ?>/pages/gallery" class="btn btn-dark btn-lg px-4 me-md-2">Shop All</a>
-        <a href="<?php echo URLROOT; ?>/pages/#about"  class="btn btn-outline-dark btn-lg px-4">Our Story</a>
+        <a href="<?php echo URLROOT; ?>/pages/#about" class="btn btn-outline-dark btn-lg px-4">Our Story</a>
       </div>
     </div>
 
@@ -51,7 +51,7 @@ require APPROOT . '/views/inc/header.php';
 <div class="container-fluid p-4 p-sm-5 my-2">
   <h1 class="fs-1 p-3">New Arrivals</h1>
 
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4  g-4">
+  <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4  g-4">
     <!--  -->
 
     <?php foreach ($data['products'] as $product) : ?>
@@ -59,8 +59,10 @@ require APPROOT . '/views/inc/header.php';
         <div class="card h-100">
           <img src="<?php echo URLROOT; ?>/uploads/<?php echo $product->image; ?>" class="card-img-top" alt="...">
           <div class="card-body h-auto">
-            <h5 class="card-title"><?php echo $product->titre; ?></h5>
-            <p class="card-text"><b><?php echo $product->prix; ?> &nbsp;MAD</b> </p>
+            <h5 class="card-title" style="line-height: 1.2em;
+    height: 2.2em; font-size:18px;     
+    overflow: hidden;"><?php echo $product->titre; ?></h5>
+            <p class="card-text fs-6 text-secondary"><b><?php echo $product->prix; ?> &nbsp;MAD</b> </p>
           </div>
         </div>
       </div>

@@ -6,26 +6,26 @@
         <h2 class="text-dark text-center mt-3">Create Product</h2>
 
 
-        <form action="<?php echo URLROOT .'/dashboard/add'; ?>" class="col-md-6  text-dark fw-bold p-4" method="POST" enctype="multipart/form-data">
+        <form action="<?php echo URLROOT . '/dashboard/add'; ?>" class="col-md-6  text-dark fw-bold p-4" method="POST" enctype="multipart/form-data">
             <div class="mb-3 text-dark">
                 <label for="validationText" class="form-label">Title</label>
                 <input class="form-control <?php echo (!empty($data['titre_err'])) ? 'is-invalid' : ''; ?>" name="titre" placeholder="Required Product Title" value="<?php echo $data['titre']; ?>">
                 <div class="invalid-feedback">
-                <small><?php echo $data['titre_err']; ?></small>
+                    <small><?php echo $data['titre_err']; ?></small>
                 </div>
             </div>
             <div class="mb-3 text-dark">
                 <label for="validationText" class="form-label">Price</label>
                 <input class="form-control <?php echo (!empty($data['prix_err'])) ? 'is-invalid' : ''; ?>" type="number" name="prix" placeholder="Required Product Price" value="<?php echo $data['prix']; ?>">
                 <div class="invalid-feedback">
-                <small><?php echo $data['prix_err']; ?></small>
+                    <small><?php echo $data['prix_err']; ?></small>
                 </div>
             </div>
             <div class="mb-3 text-dark">
                 <label for="validationText" class="form-label">Quantity</label>
                 <input class="form-control <?php echo (!empty($data['qnt_err'])) ? 'is-invalid' : ''; ?>" type="number" name="qnt" placeholder="Required Product Quantity" value="<?php echo $data['qnt']; ?>">
                 <div class="invalid-feedback">
-                <small><?php echo $data['qnt_err']; ?></small>
+                    <small><?php echo $data['qnt_err']; ?></small>
                 </div>
             </div>
 
@@ -49,9 +49,9 @@
             <div class="mb-3 text-dark">
                 <label for="validationText" class="form-label">Image</label>
 
-                <input class="form-control <?php echo (!empty($data['image_err'])) ? 'is-invalid' : ''; ?>" type="file" name="image" id="formFile" value="<?php echo $data['image']; ?>" placeholder="Required a Product Image" >
+                <input class="form-control <?php echo (!empty($data['image_err'])) ? 'is-invalid' : ''; ?>" type="file" name="image" id="formFile" value="<?php echo $data['image']; ?>" placeholder="Required a Product Image">
                 <div class="invalid-feedback">
-                <small><?php echo $data['image_err']; ?></small>
+                    <small><?php echo $data['image_err']; ?></small>
                 </div>
             </div>
             <div class="my-4 text-center ">

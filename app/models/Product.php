@@ -20,6 +20,14 @@ class Product
 
         return $results;
     }
+    public function getProductsLimit()
+    {
+        $this->db->query('SELECT * FROM produits LIMIT 4');
+
+        $results = $this->db->resultSet();
+
+        return $results;
+    }
 
 
     public function getProductById($id)

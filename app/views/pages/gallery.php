@@ -155,8 +155,10 @@ require APPROOT . '/views/inc/header.php';
                 <div class="card h-100">
                     <img src="<?php echo URLROOT; ?>/uploads/<?php echo $product->image; ?>" class="card-img-top" alt="...">
                     <div class="card-body h-auto">
-                        <h5 class="card-title"><?php echo $product->titre; ?></h5>
-                        <p class="card-text"><b><?php echo $product->prix;?> &nbsp;MAD</b> </p>
+                    <h5 class="card-title" style="line-height: 1.2em;
+    height: 2.3em; font-size:18px;     
+    overflow: hidden;"><?php echo $product->titre; ?></h5>
+            <p class="card-text fs-6 text-secondary"><b><?php echo $product->prix; ?> &nbsp;MAD</b> </p>
                     </div>
                 </div>
             </div>

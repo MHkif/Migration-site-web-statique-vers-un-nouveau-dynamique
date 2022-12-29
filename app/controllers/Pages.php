@@ -17,7 +17,7 @@ class Pages extends Controller
     //   redirect('admins/dashboard');
     // }
 
-    $products = $this->productModel->getProducts();
+    $products = $this->productModel->getProductsLimit();
     $data = ['products' => $products];
 
     $this->view('pages/index', $data);
