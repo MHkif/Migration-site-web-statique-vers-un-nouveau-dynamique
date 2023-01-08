@@ -59,10 +59,10 @@ require APPROOT . '/views/inc/header.php';
         <div class="card h-100">
           <img src="<?php echo URLROOT; ?>/uploads/<?php echo $product->image; ?>" class="card-img-top" alt="...">
           <div class="card-body h-auto">
-            <h5 class="card-title" style="line-height: 1.2em;
-    height: 2.2em; font-size:18px;     
+            <h5 class="card-title d-flex flex-col  align-items-center" style="line-height: 1em;
+    height: 2em; font-size:14px;     
     overflow: hidden;"><?php echo $product->titre; ?></h5>
-            <p class="card-text fs-6 text-secondary"><b><?php echo $product->prix; ?> &nbsp;MAD</b> </p>
+            <p class="card-text fs-6 position-ralative"><b> <span class="text-secondary">MAD</span> <?php echo $product->prix; ?> <span class="position-absolute top-10 start-10" style="font-size: 12px; font-weight:400;">00</span> </b> </p>
           </div>
         </div>
       </div>
@@ -73,7 +73,12 @@ require APPROOT . '/views/inc/header.php';
   </div>
 </div>
 
-<!-- Collictions -->
+
+
+
+
+
+<!-- Collections -->
 <div class="container-fluid py-3 text-center ">
   <h1 class="fs-1 p-3" style="font-family: 'Courgette', cursive; ">Cullinan's best Collections</h1>
   <div class="row flex-lg justify-content-center align-items-center p-3 p-sm-5">
@@ -266,5 +271,24 @@ require APPROOT . '/views/inc/header.php';
   </div>
 </div>
 
+<script>
+  let defaultTransform = 0;
+
+  function goNext() {
+    defaultTransform = defaultTransform - 398;
+    var slider = document.getElementById("slider");
+    if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7) defaultTransform = 0;
+    slider.style.transform = "translateX(" + defaultTransform + "px)";
+  }
+  next.addEventListener("click", goNext);
+
+  function goPrev() {
+    var slider = document.getElementById("slider");
+    if (Math.abs(defaultTransform) === 0) defaultTransform = 0;
+    else defaultTransform = defaultTransform + 398;
+    slider.style.transform = "translateX(" + defaultTransform + "px)";
+  }
+  prev.addEventListener("click", goPrev);
+</script>
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>

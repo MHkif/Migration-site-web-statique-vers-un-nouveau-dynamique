@@ -1,31 +1,32 @@
 <?php
 class Dashboard extends Controller
 {
-    public function __construct()
-    {
-        if (!isLoggedIn()) {
-            redirect('admins/login');
-        }
-        $this->prodModel = $this->model('Product');
+  private $prodModel;
+  public function __construct()
+  {
+    if (!isLoggedIn()) {
+      redirect('admins/login');
     }
+    $this->prodModel = $this->model('Product');
+  }
 
 
 
-    public function index()
-    {
+  public function index()
+  {
 
 
-        $products = $this->prodModel->getProducts();
-        $data = ['products' => $products];
+    $products = $this->prodModel->getProducts();
+    $data = ['products' => $products];
 
 
-        $this->view('dashboard/index', $data);
-    }
+    $this->view('dashboard/index', $data);
+  }
 
 
 
 
-    public function add()
+  public function add()
   {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -66,7 +67,7 @@ class Dashboard extends Controller
         // die('Success');
         if ($this->prodModel->add($data)) {
           // flash('post_message', 'Product Updated');
-          move_uploaded_file($_FILES['image']["tmp_name"], 'uploads/'.$data["image"]);
+          move_uploaded_file($_FILES['image']["tmp_name"], 'uploads/' . $data["image"]);
           redirect('dashboard');
         } else {
           die('Something went wrong');
@@ -85,7 +86,7 @@ class Dashboard extends Controller
         'qnt' => '',
 
       ];
-    //   die('Not Success');
+      //   die('Not Success');
       $this->view('dashboard/add', $data);
     }
   }
@@ -130,7 +131,7 @@ class Dashboard extends Controller
 
         if ($this->prodModel->update($data)) {
           // flash('post_message', 'Product Updated');
-          move_uploaded_file($_FILES['image']["tmp_name"], 'uploads/'.$data["image"]);
+          move_uploaded_file($_FILES['image']["tmp_name"], 'uploads/' . $data["image"]);
           redirect('dashboard');
         } else {
           die('Something went wrong');

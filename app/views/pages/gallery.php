@@ -32,7 +32,7 @@ require APPROOT . '/views/inc/header.php';
     <div class=" d-flex align-items-center justify-content-between mb-3 px-2">
         <h2 class="pull-left">Products</h2>
         <!-- data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" -->
- 
+
         <!-- Update Canvas -->
         <div class="offcanvas offcanvas-start mt-0" data-bs-scroll="false" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsUpdateLabel">
             <div class="offcanvas-header">
@@ -148,17 +148,17 @@ require APPROOT . '/views/inc/header.php';
 
 
         <!-- here i generate products -->
-  <!-- here i generate products -->
+        <!-- here i generate products -->
 
-  <?php foreach ($data['products'] as $product) : ?>
+        <?php foreach ($data['products'] as $product) : ?>
             <div class="col">
                 <div class="card h-100">
                     <img src="<?php echo URLROOT; ?>/uploads/<?php echo $product->image; ?>" class="card-img-top" alt="...">
                     <div class="card-body h-auto">
-                    <h5 class="card-title" style="line-height: 1.2em;
-    height: 2.3em; font-size:18px;     
+                        <h5 class="card-title d-flex flex-col  align-items-center" style="line-height: 1em;
+    height: 2em; font-size:14px;     
     overflow: hidden;"><?php echo $product->titre; ?></h5>
-            <p class="card-text fs-6 text-secondary"><b><?php echo $product->prix; ?> &nbsp;MAD</b> </p>
+                        <p class="card-text fs-6 position-ralative"><b> <span class="text-secondary">MAD</span> <?php echo $product->prix; ?> <span class="position-absolute top-10 start-10" style="font-size: 12px; font-weight:400;">00</span> </b> </p>
                     </div>
                 </div>
             </div>

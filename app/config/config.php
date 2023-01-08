@@ -10,7 +10,7 @@ define('APPROOT', dirname(dirname(__FILE__)));
 // URL Root
 define('URLROOT', 'http://localhost/Migration-site-web-statique-vers-un-nouveau-dynamique');
 
-define('UPLOADROOT', URLROOT.'/uploads');
+define('UPLOADS', URLROOT.'/uploads');
 
 // Site Name
 define('SITENAME', 'Cullinan');
